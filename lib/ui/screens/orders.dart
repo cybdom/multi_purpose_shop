@@ -38,64 +38,61 @@ class OrdersScreen extends StatelessWidget {
                     height: 5.0,
                   ),
                   Expanded(
-                    child: Container(
-                      child: ListView(
-                        children: <Widget>[
-                          ...List.generate(productsList.length, (id) {
-                            return ListTile(
-                              leading: ClipRRect(
-                                borderRadius: BorderRadius.circular(5.0),
-                                child: Image.network(
-                                  "${productsList[id].img}",
-                                  width: 70,
-                                  height: 100,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              title: Text(
-                                "${productsList[id].title}",
-                                style: Theme.of(context).textTheme.title,
-                              ),
-                              subtitle: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 15.0,
-                                ),
-                                child: Counter(),
-                              ),
-                              trailing: Text(
-                                "${productsList[id].price}",
-                                style: Theme.of(context).textTheme.title,
-                              ),
-                            );
-                          }).toList(),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 15.0),
-                            child: ListTile(
-                              leading: Container(
+                    child: ListView(
+                      children: <Widget>[
+                        ...List.generate(productsList.length, (id) {
+                          return ListTile(
+                            leading: ClipRRect(
+                              borderRadius: BorderRadius.circular(5.0),
+                              child: Image.network(
+                                "${productsList[id].img}",
                                 width: 70,
-                                height: double.infinity,
-                                // margin: EdgeInsets.only(top: 15),
-                                decoration: BoxDecoration(
-                                  color: Colors.cyan,
-                                  borderRadius: BorderRadius.circular(5.0),
-                                ),
-                                child: Icon(Icons.dashboard),
-                              ),
-                              title: Text(
-                                "Delivery",
-                                style:
-                                    Theme.of(context).textTheme.headline.apply(
-                                          fontWeightDelta: 2,
-                                        ),
-                              ),
-                              trailing: Text(
-                                "\$5.99",
-                                style: Theme.of(context).textTheme.title,
+                                height: 100,
+                                fit: BoxFit.fill,
                               ),
                             ),
-                          )
-                        ],
-                      ),
+                            title: Text(
+                              "${productsList[id].title}",
+                              style: Theme.of(context).textTheme.title,
+                            ),
+                            subtitle: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 15.0,
+                              ),
+                              child: Counter(),
+                            ),
+                            trailing: Text(
+                              "${productsList[id].price}",
+                              style: Theme.of(context).textTheme.title,
+                            ),
+                          );
+                        }).toList(),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: ListTile(
+                            leading: Container(
+                              width: 70,
+                              height: double.infinity,
+                              // margin: EdgeInsets.only(top: 15),
+                              decoration: BoxDecoration(
+                                color: Colors.cyan,
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                              child: Icon(Icons.dashboard),
+                            ),
+                            title: Text(
+                              "Delivery",
+                              style: Theme.of(context).textTheme.headline.apply(
+                                    fontWeightDelta: 2,
+                                  ),
+                            ),
+                            trailing: Text(
+                              "\$5.99",
+                              style: Theme.of(context).textTheme.title,
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 ],
