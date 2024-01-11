@@ -14,19 +14,19 @@ class HomeScreen extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.title),
-            title: Text("Home"),
+            label: "Home",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.card_giftcard),
-            title: Text("Gift"),
+            label: "Gift",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite_border),
-            title: Text("Favorite"),
+            label: "Favorite",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
-            title: Text("Person"),
+            label: "Person",
           ),
         ],
       ),
@@ -54,14 +54,16 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             Text(
               "Food",
-              style: Theme.of(context).textTheme.display1.apply(
+              style: Theme.of(context).textTheme.headlineMedium?.apply(
                     fontWeightDelta: 2,
                     color: Colors.black,
                   ),
             ),
             Text("Delivery",
-                style:
-                    Theme.of(context).textTheme.display1.copyWith(height: .9)),
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineMedium
+                    ?.copyWith(height: .9)),
             SizedBox(
               height: 15,
             ),
@@ -86,7 +88,7 @@ class HomeScreen extends StatelessWidget {
             ),
             Text(
               "Hamburger",
-              style: Theme.of(context).textTheme.title.apply(
+              style: Theme.of(context).textTheme.titleLarge?.apply(
                     fontWeightDelta: 2,
                   ),
             ),
@@ -98,11 +100,10 @@ class HomeScreen extends StatelessWidget {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
-                childAspectRatio: .7
-              ),
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 15,
+                  mainAxisSpacing: 15,
+                  childAspectRatio: .7),
               itemCount: productsList.length,
               itemBuilder: (BuildContext context, int index) {
                 return ProductContainer(id: index);

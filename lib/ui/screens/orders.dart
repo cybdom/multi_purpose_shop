@@ -31,8 +31,8 @@ class OrdersScreen extends StatelessWidget {
                     "My Order",
                     style: Theme.of(context)
                         .textTheme
-                        .display1
-                        .apply(fontWeightDelta: 2, color: Colors.black),
+                        .headlineMedium
+                        ?.apply(fontWeightDelta: 2, color: Colors.black),
                   ),
                   SizedBox(
                     height: 5.0,
@@ -53,7 +53,7 @@ class OrdersScreen extends StatelessWidget {
                             ),
                             title: Text(
                               "${productsList[id].title}",
-                              style: Theme.of(context).textTheme.title,
+                              style: Theme.of(context).textTheme.titleLarge,
                             ),
                             subtitle: Padding(
                               padding: const EdgeInsets.symmetric(
@@ -63,7 +63,7 @@ class OrdersScreen extends StatelessWidget {
                             ),
                             trailing: Text(
                               "${productsList[id].price}",
-                              style: Theme.of(context).textTheme.title,
+                              style: Theme.of(context).textTheme.titleLarge,
                             ),
                           );
                         }).toList(),
@@ -82,13 +82,16 @@ class OrdersScreen extends StatelessWidget {
                             ),
                             title: Text(
                               "Delivery",
-                              style: Theme.of(context).textTheme.headline.apply(
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headlineSmall
+                                  ?.apply(
                                     fontWeightDelta: 2,
                                   ),
                             ),
                             trailing: Text(
                               "\$5.99",
-                              style: Theme.of(context).textTheme.title,
+                              style: Theme.of(context).textTheme.titleLarge,
                             ),
                           ),
                         )
@@ -108,7 +111,7 @@ class OrdersScreen extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     "Payment",
-                    style: Theme.of(context).textTheme.title,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                   Expanded(
                     child: Container(
@@ -134,16 +137,18 @@ class OrdersScreen extends StatelessWidget {
                                     "**** 4832",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .title
-                                        .apply(color: Colors.white),
+                                        .titleLarge
+                                        ?.apply(color: Colors.white),
                                   ),
                                   Spacer(),
                                   Text(
                                     "\$25.99",
-                                    style:
-                                        Theme.of(context).textTheme.title.apply(
-                                              color: Colors.white,
-                                            ),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleLarge
+                                        ?.apply(
+                                          color: Colors.white,
+                                        ),
                                   ),
                                   Image.asset("assets/img/mastercard.png"),
                                 ],
@@ -171,18 +176,20 @@ class OrdersScreen extends StatelessWidget {
                   Container(
                     height: 50,
                     width: double.infinity,
-                    child: RaisedButton(
+                    child: ElevatedButton(
                       child: Text(
                         "Confirm Payment",
                         style: Theme.of(context)
                             .textTheme
-                            .button
-                            .apply(color: Colors.white),
+                            .labelLarge
+                            ?.apply(color: Colors.white),
                       ),
                       onPressed: () {},
-                      color: Colors.green,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
                       ),
                     ),
                   )

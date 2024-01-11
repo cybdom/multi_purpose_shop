@@ -5,7 +5,8 @@ import 'package:shop_delivery/ui/screens/details.dart';
 class ProductContainer extends StatelessWidget {
   final int id;
 
-  const ProductContainer({Key key, this.id}) : super(key: key);
+  const ProductContainer({super.key, required this.id});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -26,7 +27,7 @@ class ProductContainer extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 "${productsList[id].price}",
-                style: Theme.of(context).textTheme.title.copyWith(
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       color: Colors.white,
                     ),
               ),
@@ -64,8 +65,8 @@ class ProductContainer extends StatelessWidget {
                 "${productsList[id].title}",
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle
-                    .copyWith(color: Colors.white),
+                    .titleSmall
+                    ?.copyWith(color: Colors.white),
               ),
             )
           ],

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_delivery/global.dart';
-class CategoryContainer extends StatefulWidget {
-  const CategoryContainer({
-    Key key,
-  }) : super(key: key);
 
+class CategoryContainer extends StatefulWidget {
   @override
   _CategoryContainerState createState() => _CategoryContainerState();
 }
@@ -39,7 +36,7 @@ class _CategoryContainerState extends State<CategoryContainer> {
                 ),
                 Text(
                   "${cats[i].title}",
-                  style: Theme.of(context).textTheme.button.apply(
+                  style: Theme.of(context).textTheme.labelLarge?.apply(
                         color: _active == i ? Colors.white : Colors.black,
                       ),
                 ),

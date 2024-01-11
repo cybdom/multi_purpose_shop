@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop_delivery/ui/screens/details.dart';
 import 'package:shop_delivery/ui/screens/home.dart';
 import 'package:shop_delivery/ui/screens/orders.dart';
 
